@@ -126,7 +126,7 @@ internal class InstrumentedTest {
                 getNum.click()
                 Thread.sleep(THREAD_DELAY)
                 resultNum.assert {
-                    DoubleComparison(mean, variance, this@InstrumentedTestLogNorm)
+                    DoubleComparison(mean, variance, this@InstrumentedTest)
                 }
             }
             // check saving state after rotation
@@ -205,7 +205,7 @@ internal class InstrumentedTest {
 internal class DoubleComparison(
     private val mean: Double,
     private val std: Double,
-    private val testInstance: InstrumentedTestLogNorm
+    private val testInstance: InstrumentedTest
 ) :
     ViewAssertion {
     override fun check(view: View?, noViewFoundException: NoMatchingViewException?) {
